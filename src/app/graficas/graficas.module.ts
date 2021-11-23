@@ -23,6 +23,7 @@ import { ChartsModule } from 'ng2-charts';
   imports: [
     CommonModule,
     GraficasRoutingModule,
+    ChartsModule,
   ]
 })
 export class GraficasModule { }
