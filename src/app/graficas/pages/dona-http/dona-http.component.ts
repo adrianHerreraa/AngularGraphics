@@ -28,7 +28,9 @@ public doughnutChartData: MultiDataSet = [];
   ) { }
 
   ngOnInit(): void {
-    this.gService.getSocialMediaUSers().subscribe(
+
+    // Es la forma donde se especifican los valores, al recibir la respuesta.
+    /*this.gService.getSocialMediaUSers().subscribe(
       (data) => {
         console.log(data);
 
@@ -36,6 +38,14 @@ public doughnutChartData: MultiDataSet = [];
         this.doughnutChartLabels = labels;
 
         const values = Object.values(data);
+        this.doughnutChartData.push( values );
+      }
+    );*/
+
+    // Es la función donde en el servicio se especifican los valores.
+    this.gService.getUserDataWithStructModel().subscribe(
+      ({ labels, values }) => {
+        this.doughnutChartLabels = labels;
         this.doughnutChartData.push( values );
       }
     );
